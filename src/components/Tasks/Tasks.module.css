@@ -16,13 +16,13 @@
     justify-content: space-between;
 }
 
-.createdTasks, .fineshedTasks {
+.createdTasks, .finishedTasks {
     display: flex;
     align-items: center;
     gap: .5rem;
 }
 
-.createdTasks span, .fineshedTasks span {
+.createdTasks span, .finishedTasks span {
     padding: 2px 8px;
     border-radius: 999px;
 
@@ -37,7 +37,7 @@
     color: var(--blue-300);
 }
 
-.fineshedTasks p {
+.finishedTasks p {
     font-weight: bold;
     color: var(--purple-300);
 }
