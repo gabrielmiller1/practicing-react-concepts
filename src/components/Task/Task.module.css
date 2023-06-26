@@ -1,0 +1,48 @@
+.task {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--gray-400);
+    background: var(--gray-500);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.task.isCompleted {
+    color: var(--gray-300);
+    text-decoration: line-through;
+}
+
+.task p {
+    text-align: start;
+    flex: 1;
+}
+
+.task button:last-of-type {
+    background: transparent;
+    border: none;
+    line-height: 0;
+    border-radius: 2px;
+    color: var(--gray-300);
+}
+
+.task button:last-of-type:hover {
+    color: var(--red-500);
+}
+
+.task button:first-of-type {
+    min-width: 1.125rem;
+    height: 1.125rem;
+    background: none;
+    border: none;
+}
+
+.task button div:first-of-type {
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--blue-300);
+    border-radius: 50%;
+}

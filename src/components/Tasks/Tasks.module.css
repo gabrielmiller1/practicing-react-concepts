@@ -43,7 +43,6 @@
 }
 
 .noTasksWrapper {
-    width: 100%;
     padding: 64px 24px;
     display: flex;
     flex-direction: column;
@@ -51,10 +50,18 @@
     align-items: center;
 
     color: var(--gray-300);
-    border-top: 1px solid var(--gray-400);
-    border-radius: 8px;
 }
 
 .noTasksWrapper svg {
     margin-bottom: 0.75rem;
+}
+
+.list {
+    width: 100%;
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
