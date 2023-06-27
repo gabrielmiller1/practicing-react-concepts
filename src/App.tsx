@@ -22,12 +22,20 @@ function App() {
     ]);
   }
 
+  function deleteTaskById(taskId: string){
+    const newTasksList = tasks.filter( task => task.id !== taskId);
+    setTasks(newTasksList);
+  }
+
   const [tasks, setTasks] = useState<ITask[]>([]);
 
   return (
     <>
       <Header onAddTask={addTask}/>
-      <Tasks tasks={tasks} />
+      <Tasks 
+        tasks={tasks} 
+        onDelete={deleteTaskById}
+      />
     </>
   )
 }

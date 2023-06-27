@@ -9,7 +9,7 @@ interface Props {
 
 export function Header({ onAddTask }: Props) {
 
-  const [title, setTitle] = useState("")
+  const [title, setTitle] = useState("");
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -27,7 +27,11 @@ export function Header({ onAddTask }: Props) {
         <img src={Logo} alt="Logo" />
       </header>
       <form onSubmit={handleSubmit} className={styles.form}>
-        <input onChange={onChangeTitle} placeholder='Adicione uma nova tarefa' type="text" />
+        <input
+          value={title}
+          onChange={onChangeTitle}
+          placeholder='Adicione uma nova tarefa'
+        />
         <button type='submit'>
           Criar
           <PlusCircle size={20} />
