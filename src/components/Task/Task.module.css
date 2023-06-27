@@ -38,6 +38,10 @@
     height: 1.125rem;
     background: none;
     border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .task button div:first-of-type {
@@ -45,4 +49,9 @@
     height: 100%;
     border: 2px solid var(--blue-300);
     border-radius: 50%;
+}
+
+.textCompleted {
+    color: var(--gray-300);
+    text-decoration: line-through;
 }

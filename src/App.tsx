@@ -22,8 +22,21 @@ function App() {
     ]);
   }
 
-  function deleteTaskById(taskId: string){
-    const newTasksList = tasks.filter( task => task.id !== taskId);
+  function deleteTaskById(taskId: string) {
+    const newTasksList = tasks.filter(task => task.id !== taskId);
+    setTasks(newTasksList);
+  }
+
+  function toggleTaskCompletedById(taskId: string) {
+    const newTasksList = tasks.map(task => {
+      if (task.id === taskId) {
+        return {
+          ...task,
+          isCompleted: !task.isCompleted,
+        }
+      }
+      return task;
+    })
     setTasks(newTasksList);
   }
 
@@ -31,10 +44,11 @@ function App() {
 
   return (
     <>
-      <Header onAddTask={addTask}/>
-      <Tasks 
-        tasks={tasks} 
+      <Header onAddTask={addTask} />
+      <Tasks
+        tasks={tasks}
         onDelete={deleteTaskById}
+        onComplete={toggleTaskCompletedById}
       />
     </>
   )

@@ -23,11 +23,13 @@
     border-radius: 8px;
     padding: 1rem;
     flex: 1;
+
+    color: var(--gray-100);
 }
 
 .form button {
     background: var(--blue-500);
-    color: var(--gay-100);
+    color: var(--gray-100);
     font-weight: bold;
     font-size: 0.875rem;
 
