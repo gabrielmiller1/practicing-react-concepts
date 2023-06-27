@@ -4,23 +4,30 @@ import { Header } from './components/Header/Header'
 import { Tasks } from './components/Tasks/Tasks'
 
 export interface ITask {
-  id: number;
+  id: string;
   title: string;
   isCompleted: boolean;
 }
 
 function App() {
 
-  const [tasks, setTasks] = useState<ITask[]>([{
-    id: 0,
-    title: 'Loren ipson',
-    isCompleted: false,
-  }])
+  function addTask(taskTitle: string) {
+    setTasks([
+      ...tasks,
+      {
+        id: crypto.randomUUID(),
+        title: taskTitle,
+        isCompleted: false
+      }
+    ]);
+  }
+
+  const [tasks, setTasks] = useState<ITask[]>([]);
 
   return (
     <>
-      <Header />
-      <Tasks tasks={tasks}/>
+      <Header onAddTask={addTask}/>
+      <Tasks tasks={tasks} />
     </>
   )
 }

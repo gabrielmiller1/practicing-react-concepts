@@ -21,23 +21,26 @@ export function Tasks({ tasks }: Props) {
                 </div>
                 <div className={styles.finishedTasks}>
                     <p>Concluídas</p>
-                    <span>{tasksFinished} de 5</span>
+                    <span>{tasksFinished} de {taskQuantity}</span>
                 </div>
             </header>
             <div className={styles.list}>
-                {/* <div className={styles.noTasksWrapper}>
-                    <ClipboardText size={50} />
-                    <p><strong>Você ainda não tem tarefas cadastradas</strong></p>
-                    <p>Crie tarefas e organize seus itens a fazer</p>
-                </div> */}
-                {tasks.map(task => {
-                    return (
-                        <Task
-                            key={task.id}
-                            task={task}
-                        />
+                {
+                    taskQuantity === 0 ? (
+                        <div className={styles.noTasksWrapper}>
+                            <ClipboardText size={50} />
+                            <p><strong>Você ainda não tem tarefas cadastradas</strong></p>
+                            <p>Crie tarefas e organize seus itens a fazer</p>
+                        </div>
+                    ) : (
+                        tasks.map(task => (
+                            <Task
+                                key={task.id}
+                                task={task}
+                            />
+                        ))
                     )
-                })}
+                }
             </div>
         </section>
     )
